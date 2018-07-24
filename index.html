@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Dystopias</title>
+
+    <!-- Bootstrap for general layout and styling -->
+    <!-- <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.2/css/bootstrap.min.css"> -->
+
+    <!-- OSC.js -->
+    <script type="text/javascript" src="./node_modules/osc/dist/osc-browser.min.js"></script>
+    
+      <!-- Our WebRTC application styling -->
+      <!-- <link rel="stylesheet" type="text/css" href="style/datachannel-demo.css"> -->
+
+  <!-- <script>
+    const frameLoad = () => {
+      var chat = document.getElementById("chat");
+
+      var channelName = "my-chat-room-" + Math.round(Math.random() * 9999);
+
+      chat.src = channel + channelName;
+      // chat2.src = "/chat.html?channel=" + channelName;
+    }; 
+  </script>-->
+</head>
+<body>
+    
+  <!-- <div class="container">
+    <div class="row">
+      <header class="col-md-12">
+        <h1>Dystopias</h1>
+      </header>
+    </div>
+
+    <div class="row">
+      <section class="col-md-12">
+        <p>This chat application uses WebRTC to create a peer-to-peer, server-less connection between you and other people interested in changing OSC data streams.</p>
+        
+        <hr>
+
+        <h2>Getting started</h2> -->
+
+        <ol>
+          <li>Type a channel name and click <strong>create</strong></li>
+          <li>Open the chat in another tab</li>
+          <li>Type the same channel name and click <strong>join</strong></li>
+          <li>Wait a moment and start chatting!</li>
+        </ol>
+
+        <!-- WebRTC demo -->
+        <!-- <div class="demo">
+          <div class="demo-connect">
+            <input type="text" class="demo-chat-channel-input form-control" placeholder="Channel name">
+            <button class="demo-chat-create btn btn-primary">Create</button>
+            <button class="demo-chat-join btn btn-warning">Join</button>
+          </div>
+          <div class="osc-stuff ">
+            <div class="osc-input">
+              <input type="text" 
+              name="osc-msg"
+              class="osc-msg-input form-control"
+              placeholder="OSC messages about to come"> -->
+
+              <!-- <input type="checkbox"
+              class="send-osc"
+              name="send-osc"
+              data-toggle="toggle"
+              data-on="Enabled" data-off="Disabled"> -->
+            <!-- <button class="send-osc btn btn-dark"
+            data-toggle="button"
+            aria-pressed="false" autocomplete="off"
+            >Send OSC</button>
+            </div>
+          </div>
+          <div class="demo-chat inactive">
+            <div class="demo-chat-input">
+              <input name="message" class="demo-chat-message-input form-control" placeholder="Message">
+              <button class="demo-chat-send btn btn-primary">Send</button>
+            </div>
+            <ul class="demo-chat-messages list-group">
+              <li class="list-group-item" data-remove="true">No chat messages available</li>
+            </ul>
+          </div>
+        </div> -->
+        <!-- /End WebRTC demo -->
+      <!-- </section>
+    </div>
+  </div> -->
+  
+  <!-- Zepto for AJAX -->
+  <script src="//cdnjs.cloudflare.com/ajax/libs/zepto/1.1.3/zepto.min.js"></script>
+
+  <!-- Pusher for WebRTC signalling -->
+  <script src="//js.pusher.com/4.1/pusher.js"></script>
+  
+  <!-- DataChannel.js for WebRTC functionality -->
+  <script src="//webrtc-experiment.com/DataChannel.js"></script>
+
+  <!-- Our WebRTC application -->
+  <!-- <script src="js/main.js"></script> -->
+
+  <!-- Fill channel name -->
+  <!-- <script>
+    function getParameterByName(name) {
+      name = name.replace(/[\[]/, "\\[").replace(/[\]]/, "\\]");
+      var regex = new RegExp("[\\?&]" + name + "=([^&#]*)"),
+          results = regex.exec(location.search);
+      return results == null ? "" : decodeURIComponent(results[1].replace(/\+/g, " "));
+    }
+
+    var channel = getParameterByName("channel");
+
+    if (channel) {
+      document.querySelector(".demo-chat-channel-input").value = channel;
+    }
+    var chat = document.getElementById("chat");
+
+      var channelName = "my-chat-room-" + Math.round(Math.random() * 9999);
+
+      chat.src = this.channel + channelName;
+      // chat2.src = "/chat.html?channel=" + channelName;
+  </script> -->
+</body>
+
+</html>
