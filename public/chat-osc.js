@@ -1,52 +1,35 @@
-// const config;
-// try {
-//   config = require("../config");
-// } catch(e) {
-//   console.log("Failed to find local config, falling back to environment variables");
-//   config = {
-//     app_id: process.env.PUSHER_APP_ID,
-//     key: process.env.PUSHER_APP_KEY,
-//     secret: process.env.PUSHER_APP_SECRET,
-//     cluster: process.env.PUSHER_APP_CLUSTER,
-//   }
-// }
-
 // Initialise DataChannel.js
-const datachannel = new DataChannel();
+var datachannel = new DataChannel();
 
 // Set the userid based on what has been defined by DataChannel
 // https://github.com/muaz-khan/WebRTC-Experiment/tree/master/DataChannel#use-custom-user-ids
 datachannel.userid = window.userid;
 
-// initialise a new connection to Pusher using your application key and monitoring the connection state to store a reference to the WebSocket connection ID for the local user.
 // Open a connection to Pusher
-// var pusher = new Pusher(process.env.KEY);
-const pusher = new Pusher("ae293d18d50529afc493", { cluster: "us2" });
+var pusher = new Pusher("72bd0eccc241c799a018", { cluster: "us2" });
 
 // Storage of Pusher connection socket ID
 var socketId;
 
-// look for bugs
-// Pusher.log = function(message) {
-//   if (window.console && window.console.log) {
-//     window.console.log(message);
-//   }
-// };
+Pusher.log = function(message) {
+  if (window.console && window.console.log) {
+    window.console.log(message);
+  }
+};
 
 // Monitor Pusher connection state
 pusher.connection.bind("state_change", function(states) {
   switch (states.current) {
     case "connected":
       socketId = pusher.connection.socket_id;
-    break;
+      break;
     case "disconnected":
     case "failed":
     case "unavailable":
-    break;
+      break;
   }
 });
 
-// WEBRTC SIGNALLER - CLIENT
 // Set custom Pusher signalling channel
 // https://github.com/muaz-khan/WebRTC-Experiment/blob/master/Signaling.md
 datachannel.openSignalingChannel = function(config) {
@@ -99,9 +82,6 @@ datachannel.openSignalingChannel = function(config) {
   return socket;
 };
 
-// CONNECTION LOGIC
-
-
 var onCreateChannel = function() {
   var channelName = cleanChannelName(channelInput.value);
 
@@ -111,7 +91,7 @@ var onCreateChannel = function() {
   }
 
   disableConnectInput();
-  
+
   datachannel.open(channelName);
 };
 

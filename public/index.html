@@ -12,15 +12,15 @@
 <body>
 
   <nav class="navbar" role="navigation">
-   <!-- <div class="container">
-       <a class="brand" href="http://pusher.com">
+    <div class="container">
+      <!-- <a class="brand" href="http://pusher.com">
         <img src="http://pusher.com/prom/images/new_landing_page/pusher-logo.png" alt="Pusher" width="111" height="37">
-      </a>
+      </a> -->
 
       <span>| Realtime API</span>
 
       <a href="http://pusher.com/pricing"><button class="btn signup-button">Create a Free Account</button></a>
-    </div> -->
+    </div>
   </nav>
     
   <div class="container">
@@ -62,33 +62,33 @@
             <ul class="demo-chat-messages list-group">
               <li class="list-group-item" data-remove="true">No chat messages available</li>
             </ul>
-          </div>
+          <!-- </div>
           <footer>
             <a href="http://pusher.com">Pusher</a> powered peer-to-peer chat
           </footer>
-        </div>
+        </div> -->
         <!-- /End WebRTC demo -->
       </section>
     </div>
   </div>
   
   <!-- Zepto for AJAX -->
-  <script src="//cdnjs.cloudflare.com/ajax/libs/zepto/1.2.0/zepto.min.js"></script>
+  <script src="//cdnjs.cloudflare.com/ajax/libs/zepto/1.1.3/zepto.min.js"></script>
 
   <!-- Pusher for WebRTC signalling -->
-  <script src="https://js.pusher.com/4.2/pusher.min.js"></script>
+  <script src="//js.pusher.com/4.1/pusher.js"></script>
   
   <!-- DataChannel.js for WebRTC functionality -->
   <script src="//webrtc-experiment.com/DataChannel.js"></script>
   
-  <!-- OSC -->
-  <script src="../node_modules/osc/dist/osc-browser.min.js"></script>
+  <!-- DataChannel.js for WebRTC functionality -->
+  <script src="https://raw.githubusercontent.com/gilfuser/dystopias2/master/node_modules/osc/dist/osc-browser.min.js"></script>
 
   <!-- Our WebRTC application -->
   <script src="chat-osc.js"></script>
 
   <!-- Fill channel name -->
-  <script>
+   <script>
     function getParameterByName(name) {
       name = name.replace(/[\[]/, "\\[").replace(/[\]]/, "\\]");
       var regex = new RegExp("[\\?&]" + name + "=([^&#]*)"),
@@ -101,6 +101,6 @@
     if (channel) {
       document.querySelector(".demo-chat-channel-input").value = channel;
     }
-  </script>
+  </script> 
 </body>
 </html>
