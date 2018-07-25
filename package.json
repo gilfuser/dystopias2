@@ -6,9 +6,8 @@
     "npm": "6.2.0"
   },
   "description": "talk OSC through the browser",
-  "main": "index.js",
+  "main": "app.js",
   "scripts": {
-    "start": "node index"
   },
   "repository": {
     "type": "git",
