@@ -11,6 +11,13 @@ try {
   }
 }
 
+// Initialise DataChannel.js
+var datachannel = new DataChannel();
+
+// Set the userid based on what has been defined by DataChannel
+// https://github.com/muaz-khan/WebRTC-Experiment/tree/master/DataChannel#use-custom-user-ids
+datachannel.userid = window.userid;
+
 const express = require('express')
 
 const app = express()
