@@ -37,12 +37,16 @@ var pusherCallback = function(err, req, res){
 }
 
 // -------------------------------------------------
-// SET UP OSC.js
+// SET UP OSC-js.js
 // -------------------------------------------------
 
-const osc = require("osc")
+const OSC = require('osc-js')
 
-// HOW TO PORT THIS TO WEBRTC
+const udpconfig = { udpClient: { port: 57120 } }
+const osc = new OSC({ plugin: new OSC.BridgePlugin(udpconfig) })
+
+osc.open() // start a WebSocket server on port 8080
+// HOW TO USE THIS TO WEBRTC ?
 
 // -------------------------------------------------
 // SET UP EXPRESS
