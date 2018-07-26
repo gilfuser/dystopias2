@@ -198,7 +198,15 @@ datachannel.onmessage = (message, userId) =>
       console.log("Sending message", msg /*, "to", udpPort.options.remoteAddress + ":" + udpPort.options.remotePort*/);
       datachannel.send(msg);
     }
-  }, 1000 )
+  }, 1000 
+);
+
+var udpPort = new osc.UDPPort({
+  localAddress: "0.0.0.0",
+   localPort: 57121,
+   metadata: true
+})
+
 
 // Demo DOM elements
 const channelInput = document.querySelector(".demo-chat-channel-input")
