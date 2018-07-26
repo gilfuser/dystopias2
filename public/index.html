@@ -26,15 +26,13 @@
   <div class="container">
     <div class="row">
       <header class="col-md-12">
-        <h1>WebRTC DataChannel Chat</h1>
+        <h1>Dystopia</h1>
       </header>
     </div>
 
     <div class="row">
       <section class="col-md-12">
         <p>This chat application uses WebRTC to create a peer-to-peer, server-less connection between you and the recipient of your chat messages, a bit like Skype!</p>
-
-        <p>Want to create this yourself? Read the full tutorial on <a href="http://pusher.com/tutorials/webrtc_chat">creating a WebRTC chat application using Pusher</a>.</p>
         
         <hr>
 
@@ -53,6 +51,24 @@
             <input type="text" class="demo-chat-channel-input form-control" placeholder="Channel name"></input>
             <button class="demo-chat-create btn btn-primary">Create</button>
             <button class="demo-chat-join btn btn-warning">Join</button>
+          </div>
+          <div class="osc-stuff ">
+            <div class="osc-input">
+              <input type="text" 
+              name="osc-msg"
+              class="osc-msg-input form-control"
+              placeholder="OSC messages about to come">
+
+              <!-- <input type="checkbox"
+              class="send-osc"
+              name="send-osc"
+              data-toggle="toggle"
+              data-on="Enabled" data-off="Disabled"> -->
+            <button class="send-osc btn btn-dark"
+            data-toggle="button"
+            aria-pressed="false" autocomplete="off"
+            >Send OSC</button>
+            </div>
           </div>
           <div class="demo-chat inactive">
             <div class="demo-chat-input">
