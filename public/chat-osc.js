@@ -202,12 +202,20 @@ datachannel.onmessage = (message, userId) =>
 );
 
 var osc = new OSC();
-  osc.open(); // connect by default to ws://localhost:8080
+osc.open(); // connect by default to ws://localhost:8080
 
-  document.getElementById('send-osc').addEventListener('click', function() {
-    var message = new OSC.Message('/test/random', Math.random());
+document.getElementById('send-osc').addEventListener('click', function() {
+    let message = new OSC.Message('/test/random', Math.random());
     osc.send(message);
-  });
+});
+
+document.getElementById('test-osc').addEventListener('click', function() {
+    console.log(window.test.value)
+});
+
+someVar.add(5);
+someVar.sub(6);
+alert(someVar.total());
 
 
 // Demo DOM elements
