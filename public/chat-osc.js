@@ -213,11 +213,6 @@ document.getElementById('test-osc').addEventListener('click', function() {
     console.log(window.test.value)
 });
 
-someVar.add(5);
-someVar.sub(6);
-alert(someVar.total());
-
-
 // Demo DOM elements
 const channelInput = document.querySelector(".demo-chat-channel-input")
 const createChannelBtn = document.querySelector(".demo-chat-create")

@@ -55,21 +55,7 @@ osc.on('/test', (message) => {
 osc.open() // start a WebSocket server on port 8080
 // HOW TO USE THIS TO WEBRTC ?
 
-var someVar = (function () {
-  var total = 10; // Local scope, protected from global namespace
-
-  return {
-    add: function(num){
-      total += num;
-    }
-  , sub: function(num){
-      total -= num;
-    }
-  , total: function(){
-      return total;
-    }
-  };
-}());
+module.exports = "I'm a basic export";
 
 // -------------------------------------------------
 // SET UP EXPRESS

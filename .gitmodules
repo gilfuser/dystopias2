@@ -1,0 +1,3 @@
+[submodule "nodular.js"]
+	path = nodular.js
+	url = https://github.com/salathegroup/nodular.js

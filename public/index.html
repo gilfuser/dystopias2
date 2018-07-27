@@ -99,6 +99,41 @@
   <!-- OSC-js -->
   <!-- <script type="text/javascript" src="../node_modules/osc-js/lib/osc.browser.min.js"></script> -->
   <script type="text/javascript" src="https://raw.githubusercontent.com/gilfuser/dystopias2/master/node_modules/osc-js/lib/osc.browser.min.js"></script>
+
+  <script src="https://salathegroup.github.io/nodular.js/nodular.js"></script>
+
+  <script>
+    // Start time will be useful at the end of the page
+    var startTime = new Date();
+
+    // Specify a path prefix on the server for our required scripts
+    // _nodularJS_.pathPrefix = 'js/';
+
+    // We don't want required scripts to be loaded from the browser cache
+    // Might be removed in production
+    _nodularJS_.forceDownloads = true;
+
+    // We want to log to the console execution events
+    // Remove or change to 0 in production
+    _nodularJS_.loglevel = 2;
+
+    // We'll use that to show the source of downloaded JavaScript files
+    // This can be used for debug purposes
+    _nodularJS_.onmodulestatuschange = function(module) {
+        if (module.status == _nodularJS_.ModuleStatus.PREPARING) {
+            var source = module.sourceCode();
+            var pres = document.getElementsByClassName(module.file().replace(/^\.\//g, ''));
+            showSourceCode(source, module.file(), pres);
+        }
+    }
+</script>
+
+<script>
+  const basic_export = require('./app.js');
+  showOutput(basic_export);
+</script>
+
+
   <!-- Our WebRTC application -->
   <script src="chat-osc.js"></script>
 
