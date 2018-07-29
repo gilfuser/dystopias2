@@ -11,25 +11,29 @@ try {
   }
 }
 
-var express = require("express");
-var bodyParser = require("body-parser");
-var errorHandler = require("errorhandler");
+const express = require("express");
+const bodyParser = require("body-parser");
+const errorHandler = require("errorhandler");
+const favicon = require('express-favicon');
 
-var app = express();
+const app = express();
 const root = __dirname + "/public";
+
+app.use(favicon(__dirname + '/public/favicon.ico'));
+
 
 // --------------------------------------------------------------------
 // SET UP PUSHER
 // --------------------------------------------------------------------
-var Pusher = require("pusher");
-var pusher = new Pusher({
+const Pusher = require("pusher");
+const pusher = new Pusher({
   appId: config.app_id,
   key: config.key,
   secret: config.secret,
   cluster: config.cluster
 });
 
-var pusherCallback = function(err, req, res){
+const pusherCallback = function(err, req, res){
   if(err){
     console.log("Pusher error:", err.message);
     console.log(err.stack);
@@ -87,9 +91,9 @@ app.get("/_servers", function(req, res) {
 app.post("/message", function(req, res) {
   // TODO: Check for valid POST data
 
-  var socketId = req.body.socketId;
-  var channel = req.body.channel;
-  var message = req.body.message;
+  const socketId = req.body.socketId;
+  const channel = req.body.channel;
+  const message = req.body.message;
 
   pusher.trigger(channel, "message", message, socketId, pusherCallback);
 
@@ -97,7 +101,7 @@ app.post("/message", function(req, res) {
 });
 
 // Open server on specified port
-var port = process.env.PORT || 5000;
+const port = process.env.PORT || 5000;
 app.listen(port, function(){
   console.log("Application listening on Port:", port);
 });
