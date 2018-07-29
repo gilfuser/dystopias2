@@ -14,13 +14,13 @@ try {
 const express = require("express");
 const bodyParser = require("body-parser");
 const errorHandler = require("errorhandler");
-const favicon = require('express-favicon');
+const favicon = require('serve-favicon');
+const path = require('path');
 
 const app = express();
 const root = __dirname + "/public";
 
-app.use(favicon(__dirname + '/public/favicon.ico'));
-
+app.use(favicon(path.join(__dirname, 'public', 'favicon.ico')));
 
 // --------------------------------------------------------------------
 // SET UP PUSHER
@@ -44,16 +44,16 @@ const pusherCallback = function(err, req, res){
 // SET UP OSC-js.js
 // -------------------------------------------------
 
-const OSC = require('osc-js')
+// const OSC = require('osc-js')
 
-const udpconfig = { udpServer: { port: 54321 }, udpClient: { port: 57120 } }
-const osc = new OSC({ plugin: new OSC.BridgePlugin(udpconfig) })
+// const udpconfig = { udpServer: { port: 54321 }, udpClient: { port: 57120 } }
+// const osc = new OSC({ plugin: new OSC.BridgePlugin(udpconfig) })
 
-osc.on('/hello', (message) => {
-  console.log(message.args)
-})
+// osc.on('/hello', (message) => {
+//   console.log(message.args)
+// })
 
-osc.open() // start a WebSocket server on port 8080
+// osc.open() // start a WebSocket server on port 8080
 // HOW TO USE THIS TO WEBRTC ?
 
 // -------------------------------------------------

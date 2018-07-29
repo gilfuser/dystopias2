@@ -201,13 +201,13 @@ datachannel.onmessage = (message, userId) =>
   }, 1000 
 );
 
-var osc = new OSC();
-  osc.open(); // connect by default to ws://localhost:8080
+// var osc = new OSC();
+//   osc.open(); // connect by default to ws://localhost:8080
 
-  document.getElementById('send-osc').addEventListener('click', function() {
-    var message = new OSC.Message('/test/random', Math.random());
-    osc.send(message);
-  });
+//   document.getElementById('send-osc').addEventListener('click', function() {
+//     var message = new OSC.Message('/test/random', Math.random());
+//     osc.send(message);
+//   });
 
 
 // Demo DOM elements
