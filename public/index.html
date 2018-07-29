@@ -60,8 +60,8 @@
             data-toggle="button"
             aria-pressed="false" autocomplete="off"
             >Send OSC</button>
-            </div>
           </div>
+        </div>
           <div class="demo-chat inactive">
             <div class="demo-chat-input">
               <input name="message" class="demo-chat-message-input form-control" placeholder="Message"></input>
@@ -70,8 +70,8 @@
             <ul class="demo-chat-messages list-group">
               <li class="list-group-item" data-remove="true">No chat messages available</li>
             </ul>
-          <!-- </div>
-          <footer>
+          </div>
+          <!--<footer>
             <a href="http://pusher.com">Pusher</a> powered peer-to-peer chat
           </footer>
         </div> -->
@@ -97,7 +97,7 @@
   <script src="chat-osc.js"></script>
 
   <!-- Fill channel name -->
-   <script>
+  <script>
     function getParameterByName(name) {
       name = name.replace(/[\[]/, "\\[").replace(/[\]]/, "\\]");
       var regex = new RegExp("[\\?&]" + name + "=([^&#]*)"),
