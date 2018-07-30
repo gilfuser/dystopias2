@@ -7,7 +7,8 @@ const errorHandler = require('errorhandler');
 const path = require('path');
 
 const app = express();
-const root = `${__dirname}/public`;
+const root = path.join(__dirname, 'public');
+console.log(root);
 
 // --------------------------------------------------------------------
 // SET UP PUSHER
@@ -101,6 +102,7 @@ app.listen(port, () => {
 */
 // const express = require('express')
 // const app = express()
+app.use(express.static(root));
 
 app.get('/', (req, res) => res.send('Hello World!'));
 
