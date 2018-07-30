@@ -1,3 +1,11 @@
 {
-    "extends": "airbnb-base"
+    "env": {
+    "node": true,
+    "jquery": true
+    },
+    "extends": "airbnb-base",
+    "rules":{
+        "no-unused-vars": 1,
+        "no-undef": 1
+    }
 }

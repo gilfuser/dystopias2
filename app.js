@@ -3,7 +3,7 @@ const config = {
   key: process.env.PUSHER_APP_KEY,
   secret: process.env.PUSHER_APP_SECRET,
   cluster: process.env.PUSHER_APP_CLUSTER,
-}
+};
 
 const express = require('express');
 const bodyParser = require('body-parser');
@@ -12,7 +12,7 @@ const favicon = require('serve-favicon');
 const path = require('path');
 
 const app = express();
-const root = `${__dirname}'/public'`;
+const root = `${__dirname}/public`;
 
 // --------------------------------------------------------------------
 // SET UP PUSHER
@@ -54,6 +54,7 @@ const pusherCallback = (err, req, res) => {
 // -------------------------------------------------
 
 // Parse application/json and application/x-www-form-urlencoded
+app.use(favicon(path.join(__dirname, 'public', 'favicon.ico')));
 app.use(bodyParser.urlencoded({
   extended: true,
 }));
@@ -79,7 +80,7 @@ app.use(express.static(root));
 // app.get('/_servers', (req, res) => {
 //   res.send(404);
 // });
-
+/* eslint-disable prefer-destructuring */
 // Message proxy
 app.post('/message', (req, res) => {
   // TODO: Check for valid POST data
