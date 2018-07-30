@@ -1,14 +1,9 @@
-const config = {
-  app_id: process.env.PUSHER_APP_ID,
-  key: process.env.PUSHER_APP_KEY,
-  secret: process.env.PUSHER_APP_SECRET,
-  cluster: process.env.PUSHER_APP_CLUSTER,
-};
+
 
 const express = require('express');
 const bodyParser = require('body-parser');
 const errorHandler = require('errorhandler');
-const favicon = require('serve-favicon');
+// const favicon = require('serve-favicon');
 const path = require('path');
 
 const app = express();
@@ -17,21 +12,21 @@ const root = `${__dirname}/public`;
 // --------------------------------------------------------------------
 // SET UP PUSHER
 // --------------------------------------------------------------------
-const Pusher = require('pusher');
+// const Pusher = require('pusher');
 
-const pusher = new Pusher({
-  appId: config.app_id,
-  key: config.key,
-  secret: config.secret,
-  cluster: config.cluster,
-});
+// const pusher = new Pusher({
+//   appId: process.env.PUSHER_APP_ID,
+//   key: process.env.PUSHER_APP_KEY,
+//   secret: process.env.PUSHER_APP_SECRET,
+//   cluster: process.env.PUSHER_APP_CLUSTER,
+// });
 
-const pusherCallback = (err, req, res) => {
-  if (err) {
-    console.log('Pusher error:', err.message);
-    console.log(err.stack);
-  }
-};
+// const pusherCallback = (err, req, res) => {
+//   if (err) {
+//     console.log('Pusher error:', err.message);
+//     console.log(err.stack);
+//   }
+// };
 
 // -------------------------------------------------
 // SET UP OSC-js.js
@@ -54,7 +49,8 @@ const pusherCallback = (err, req, res) => {
 // -------------------------------------------------
 
 // Parse application/json and application/x-www-form-urlencoded
-app.use(favicon(path.join(__dirname, 'public', 'favicon.ico')));
+// app.use(favicon(path.join(__dirname, 'public', 'favicon.ico')));
+/*
 app.use(bodyParser.urlencoded({
   extended: true,
 }));
@@ -75,13 +71,16 @@ app.use(errorHandler({
 
 // Serve static files from directory
 app.use(express.static(root));
-
+*/
 // Basic protection on _servers content
 // app.get('/_servers', (req, res) => {
 //   res.send(404);
 // });
+
 /* eslint-disable prefer-destructuring */
+
 // Message proxy
+/*
 app.post('/message', (req, res) => {
   // TODO: Check for valid POST data
   // eslint disable
@@ -99,10 +98,10 @@ const port = process.env.PORT || 5000;
 app.listen(port, () => {
   console.log('Application listening on Port:', port);
 });
+*/
+// const express = require('express')
+// const app = express()
 
-/* const express = require('express')
-const app = express()
+app.get('/', (req, res) => res.send('Hello World!'));
 
-app.get('/', (req, res) => res.send('Hello World!'))
-
-app.listen(5000, () => console.log('Example app listening on port 3000!')) */
+app.listen(5000, () => console.log('Example app listening on port 5000!'));
